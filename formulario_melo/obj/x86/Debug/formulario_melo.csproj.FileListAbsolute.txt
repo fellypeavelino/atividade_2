@@ -1,0 +1,7 @@
+C:\Users\mria do carmo\Documents\felipe\formulario_melo\formulario_melo\bin\Debug\formulario_melo.exe
+C:\Users\mria do carmo\Documents\felipe\formulario_melo\formulario_melo\bin\Debug\formulario_melo.pdb
+C:\Users\mria do carmo\Documents\felipe\formulario_melo\formulario_melo\obj\x86\Debug\formulario_melo.Form1.resources
+C:\Users\mria do carmo\Documents\felipe\formulario_melo\formulario_melo\obj\x86\Debug\formulario_melo.Properties.Resources.resources
+C:\Users\mria do carmo\Documents\felipe\formulario_melo\formulario_melo\obj\x86\Debug\formulario_melo.csproj.GenerateResource.Cache
+C:\Users\mria do carmo\Documents\felipe\formulario_melo\formulario_melo\obj\x86\Debug\formulario_melo.exe
+C:\Users\mria do carmo\Documents\felipe\formulario_melo\formulario_melo\obj\x86\Debug\formulario_melo.pdb
