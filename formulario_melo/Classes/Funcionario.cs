@@ -89,6 +89,17 @@ namespace formulario_melo.Classes
                 sql = "select * from cadastro where rg ='" + rg + "' and cpf ='"+cpf+"'";
             }
 
+            if (codigo != null) {
+                sql = "select * from cadastro where codigo=" + codigo;
+            }
+
+            if (cpf != "") {
+                sql = "select * from cadastro where cpf ='" + cpf + "'";
+            }
+
+            if (rg != "") {
+                sql = "select * from cadastro where rg ='" + rg + "'";
+            }
             SqlCommand command = new SqlCommand(sql, connection);
             connection.Open();
             SqlDataReader read = command.ExecuteReader();
@@ -119,8 +130,17 @@ namespace formulario_melo.Classes
         
         }
 
-        public void atualizar() {
- 
+        public void atualizar(Funcionario f)
+        {
+            Banco b = new Banco();
+            SqlConnection connection = b.con();
+            String sql = "update cadastro set nome = '"+f.nome+"', rua='"+ f.rua+"', numero="+f.numero+",";
+            sql += "complemento='"+f.complemento+"', bairro='"+f.bairro+"', cidade='"+f.cidade+"', uf='"+f.uf+"',";
+            sql +="pais='"+f.pais+"', data='"+f.data+"', cpf='"+f.cpf+"', rg='"+f.rg+"', pai='"+f.pai+"', mae='"+f.mae+"'";
+            SqlCommand Commando = new SqlCommand(sql, connection);
+            connection.Open();
+            Commando.ExecuteNonQuery();
+            connection.Close();
         }
 
     }
