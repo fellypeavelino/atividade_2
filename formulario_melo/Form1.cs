@@ -199,5 +199,38 @@ namespace formulario_melo
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void listar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Funcionario f = new Funcionario();
+                List<Funcionario> Pesquisa = f.Pesquisa("", int.Parse(codigoUpdate.Text), "");
+                foreach (Funcionario funcionario in Pesquisa)
+                {
+                    nomeUpdate.Text = funcionario.nome;
+                    cpfUpdate.Text = funcionario.cpf;
+                    rgUpdate.Text = funcionario.rg;
+                    dataUpdate.Text = funcionario.data;
+                    paiUpdate.Text = funcionario.pai;
+                    maeUpdate.Text = funcionario.mae;
+                    paisUpdate.Text = funcionario.pais;
+                    endercoUpdate.Text = funcionario.rua;
+                    numeroUpdate.Text = funcionario.numero.ToString();
+                    complemento.Text = funcionario.complemento;
+                    bairroUpdate.Text = funcionario.bairro;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

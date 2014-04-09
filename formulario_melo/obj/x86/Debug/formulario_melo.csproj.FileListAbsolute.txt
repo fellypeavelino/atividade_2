@@ -5,3 +5,4 @@ C:\Users\mria do carmo\Documents\felipe\formulario_melo\formulario_melo\obj\x86\
 C:\Users\mria do carmo\Documents\felipe\formulario_melo\formulario_melo\obj\x86\Debug\formulario_melo.csproj.GenerateResource.Cache
 C:\Users\mria do carmo\Documents\felipe\formulario_melo\formulario_melo\obj\x86\Debug\formulario_melo.exe
 C:\Users\mria do carmo\Documents\felipe\formulario_melo\formulario_melo\obj\x86\Debug\formulario_melo.pdb
+C:\Users\mria do carmo\Documents\felipe\formulario_melo\formulario_melo\obj\x86\Debug\formulario_melo.csprojResolveAssemblyReference.cache
