@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using formulario_melo.Classes;
+using System.Net.Sockets;
+using System.Threading;
+using System.Net;
 
 namespace formulario_melo
 {
@@ -55,6 +58,85 @@ namespace formulario_melo
                 MessageBox.Show(ex.Message);
             }
         }
+
+        int numeroporta = 8000;
+        TcpListener tcplistener;
+        TcpClient tcpclient;
+        NetworkStream networkstream;
+        Thread thinteraction;
+
+
+         public bool connection() {
+            bool retorno = false;
+            try {
+                    tcplistener = new TcpListener(IPAddress.Any, numeroporta);
+                    tcplistener.Start();
+                    return true;
+                }
+            catch (Exception ex) { }
+            return retorno;
+         }
+
+        public void desconect() { 
+            if(thinteraction != null){
+                if(thinteraction.ThreadState == ThreadState.Running){
+                    thinteraction.Abort();
+                }
+            }
+            if (tcpclient != null)
+            {
+                tcpclient.Client.Disconnect(true);
+            }
+            tcplistener.Stop();
+            //setMsg("conexão perdida...", true);
+            MessageBox.Show("conexão perdida...");
+        }
+
+        public void acceptconnection()
+        {
+            try
+            {
+                tcpclient = tcplistener.AcceptTcpClient();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void enviarmsg(String mensagem)
+        {
+            if (podeescrever())
+            {
+
+                byte[] sendbyte = Encoding.ASCII.GetBytes(mensagem);
+                networkstream.Write(sendbyte, 0, sendbyte.Length);
+            }
+
+        }
+
+        public bool podeescrever()
+        {
+            if (networkstream == null)
+            {
+                return false;
+            }
+
+            if (networkstream.CanRead && tcpclient != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /*
+            Servidor
+         *  
+        */
 
         public String estado(String uf)
         {
